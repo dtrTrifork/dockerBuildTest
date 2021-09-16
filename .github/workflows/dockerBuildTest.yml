@@ -1,10 +1,10 @@
-name: application-server-CI
+name: docker-build-test
 
 # Run this workflow every time a new commit pushed to the branch 'master'
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   docker:

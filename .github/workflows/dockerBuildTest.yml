@@ -6,6 +6,10 @@ on:
     branches:
       - "main"
 
+defaults:
+  run:
+    working-directory: applicationserver
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -41,5 +45,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
+          context: applicationserver
           push: true
           tags: ghcr.io/dtrtrifork/test-app:${{ steps.vars.outputs.sha_short }}
